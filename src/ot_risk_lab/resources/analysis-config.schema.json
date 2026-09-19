@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shuaib5352/ot-risk-lab/schemas/analysis-config.schema.json",
+  "title": "OT-RiskLab analysis configuration",
+  "type": "object",
+  "required": ["asset", "threat"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "assessment_id": {"type": "string"},
+        "analyst": {"type": "string"},
+        "organization": {"type": "string"},
+        "scope": {"type": "string"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "required": ["name", "criticality", "safety_impact", "availability_impact", "internet_exposure", "legacy_factor"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "asset_type": {"type": "string"},
+        "zone": {"type": "string"},
+        "criticality": {"$ref": "#/$defs/unit"},
+        "safety_impact": {"$ref": "#/$defs/unit"},
+        "availability_impact": {"$ref": "#/$defs/unit"},
+        "internet_exposure": {"$ref": "#/$defs/unit"},
+        "legacy_factor": {"$ref": "#/$defs/unit"}
+      },
+      "additionalProperties": false
+    },
+    "threat": {
+      "type": "object",
+      "required": ["name", "cvss", "impact"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "cvss": {"type": "number", "minimum": 0, "maximum": 10},
+        "likelihood": {"$ref": "#/$defs/unit"},
+        "impact": {"$ref": "#/$defs/unit"},
+        "techniques": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"}},
+        "cve_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"}},
+        "epss_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "epss_percentile": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "cisa_kev": {"type": "boolean"},
+        "evidence_date": {"type": ["string", "null"], "format": "date"},
+        "likelihood_basis": {"enum": ["analyst", "expert-elicitation", "historical", "epss-30d", "other"]}
+      },
+      "additionalProperties": false
+    },
+    "mitigation": {
+      "type": "object",
+      "properties": {
+        "manual_effectiveness": {"$ref": "#/$defs/unit"},
+        "controls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "effectiveness"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "control_id": {"type": "string"},
+              "effectiveness": {"$ref": "#/$defs/unit"},
+              "coverage": {"$ref": "#/$defs/unit"},
+              "confidence": {"$ref": "#/$defs/unit"},
+              "implementation": {"$ref": "#/$defs/unit"},
+              "csf_function": {"enum": ["GOVERN", "IDENTIFY", "PROTECT", "DETECT", "RESPOND", "RECOVER"]},
+              "evidence": {"type": "string"},
+              "reference": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "simulation": {
+      "type": "object",
+      "properties": {
+        "iterations": {"type": "integer", "minimum": 100},
+        "uncertainty": {"$ref": "#/$defs/unit"},
+        "seed": {"type": "integer"},
+        "markov_steps": {"type": "integer", "minimum": 1},
+        "distribution": {"enum": ["fixed", "truncated_normal", "triangular"]},
+        "factor_uncertainty": {"type": "object", "additionalProperties": {"$ref": "#/$defs/unit"}}
+      },
+      "additionalProperties": false
+    },
+    "risk_model": {
+      "type": "object",
+      "properties": {
+        "cvss_weight": {"type": "number", "minimum": 0},
+        "exposure_weight": {"type": "number", "minimum": 0},
+        "legacy_weight": {"type": "number", "minimum": 0},
+        "threat_impact_weight": {"type": "number", "minimum": 0},
+        "criticality_weight": {"type": "number", "minimum": 0},
+        "safety_weight": {"type": "number", "minimum": 0},
+        "availability_weight": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "markov": {
+      "type": "object",
+      "properties": {
+        "secure_to_recon_base": {"$ref": "#/$defs/unit"},
+        "secure_to_recon_scale": {"type": "number", "minimum": 0},
+        "recon_to_exploit_base": {"$ref": "#/$defs/unit"},
+        "recon_to_exploit_scale": {"type": "number", "minimum": 0},
+        "exploit_to_compromise_base": {"$ref": "#/$defs/unit"},
+        "exploit_to_compromise_scale": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "risk_tolerance": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "tolerance_label": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "unit": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": false
+}

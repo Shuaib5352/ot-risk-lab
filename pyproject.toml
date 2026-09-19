@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ot-risk-lab"
+version = "0.7.0"
+description = "Transparent stochastic risk modeling toolkit for ICS/OT cybersecurity research"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Shuaib Ayad Jasim"}
+]
+keywords = ["ics", "ot", "cybersecurity", "risk", "monte-carlo", "markov-chain", "sensitivity-analysis", "research-software", "validation", "reproducibility"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "coverage>=7.6", "ruff>=0.8"]
+
+[project.scripts]
+ot-risk-lab = "ot_risk_lab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Shuaib5352/ot-risk-lab"
+Issues = "https://github.com/Shuaib5352/ot-risk-lab/issues"
+Documentation = "https://github.com/Shuaib5352/ot-risk-lab/tree/main/docs"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.setuptools.package-data]
+ot_risk_lab = ["py.typed", "resources/*.json"]

@@ -1,0 +1,73 @@
+{
+  "asset": {
+    "name": "Legacy Chlorination PLC",
+    "asset_type": "PLC",
+    "zone": "Process Control",
+    "criticality": 0.98,
+    "safety_impact": 0.98,
+    "availability_impact": 0.95,
+    "internet_exposure": 0.3,
+    "legacy_factor": 0.9
+  },
+  "threat": {
+    "name": "Unauthorized remote manipulation",
+    "cvss": 9.1,
+    "likelihood": 0.7,
+    "impact": 0.95,
+    "techniques": [
+      "T0886",
+      "T0831"
+    ],
+    "likelihood_basis": "analyst",
+    "cve_ids": [],
+    "epss_probability": null,
+    "epss_percentile": null,
+    "cisa_kev": false,
+    "evidence_date": null
+  },
+  "mitigation": {
+    "controls": [
+      {
+        "name": "Network segmentation",
+        "effectiveness": 0.55,
+        "coverage": 0.75,
+        "confidence": 0.75,
+        "csf_function": "PROTECT",
+        "control_id": "CTRL-001",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      },
+      {
+        "name": "OT monitoring",
+        "effectiveness": 0.3,
+        "coverage": 0.7,
+        "confidence": 0.7,
+        "csf_function": "DETECT",
+        "control_id": "CTRL-002",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      }
+    ]
+  },
+  "simulation": {
+    "iterations": 3000,
+    "uncertainty": 0.1,
+    "seed": 101,
+    "markov_steps": 24
+  },
+  "metadata": {
+    "assessment_id": "EXAMPLE-005",
+    "analyst": "",
+    "organization": "",
+    "scope": "Demonstration scenario; replace assumptions with site-specific evidence",
+    "notes": [
+      "Example data only; not an empirical site assessment."
+    ]
+  },
+  "decision": {
+    "risk_tolerance": 20.0,
+    "tolerance_label": "example-only; replace with organization-defined tolerance"
+  }
+}

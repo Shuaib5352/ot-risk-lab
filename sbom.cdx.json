@@ -1,0 +1,22 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [],
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:pypi/ot-risk-lab@0.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "name": "ot-risk-lab",
+      "purl": "pkg:pypi/ot-risk-lab@0.7.0",
+      "type": "application",
+      "version": "0.7.0"
+    }
+  },
+  "specVersion": "1.6",
+  "version": 1
+}

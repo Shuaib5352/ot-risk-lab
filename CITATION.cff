@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use OT-RiskLab in research, please cite the software release."
+title: "OT-RiskLab: Transparent Stochastic Cyber-Risk Modeling for ICS/OT"
+type: software
+abstract: "OT-RiskLab is transparent research software for reproducible stochastic cyber-risk modeling, validation, and evidence-aware analysis in Industrial Control Systems and Operational Technology."
+authors:
+  - family-names: "Jasim"
+    given-names: "Shuaib Ayad"
+version: 0.7.0
+date-released: 2026-09-19
+license: MIT
+repository-code: "https://github.com/Shuaib5352/ot-risk-lab"
+keywords:
+  - industrial control systems
+  - operational technology
+  - cybersecurity
+  - risk assessment
+  - Monte Carlo simulation
+  - sensitivity analysis
+  - Markov chains

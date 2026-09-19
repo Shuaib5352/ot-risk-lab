@@ -1,0 +1,13 @@
+item_id,analyst,rating
+SCN-001,Analyst-A,High
+SCN-001,Analyst-B,High
+SCN-001,Analyst-C,High
+SCN-002,Analyst-A,Medium
+SCN-002,Analyst-B,Medium
+SCN-002,Analyst-C,High
+SCN-003,Analyst-A,Critical
+SCN-003,Analyst-B,Critical
+SCN-003,Analyst-C,Critical
+SCN-004,Analyst-A,Low
+SCN-004,Analyst-B,Medium
+SCN-004,Analyst-C,Low

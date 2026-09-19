@@ -1,0 +1,16 @@
+{
+  "suite": "ot-risk-lab-core-regression",
+  "absolute_tolerance": 1e-6,
+  "cases": [
+    {
+      "name": "demo-reference",
+      "config": "demo_config.json",
+      "expected": {
+        "deterministic.inherent_risk": 34.69675,
+        "deterministic.residual_risk": 9.280212,
+        "monte_carlo.p95": 14.142076,
+        "attack_progression.compromise_probability": 0.076993
+      }
+    }
+  ]
+}

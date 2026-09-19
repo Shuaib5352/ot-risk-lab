@@ -1,0 +1,56 @@
+{
+  "asset": {
+    "name": "Water-Treatment PLC-01",
+    "asset_type": "PLC",
+    "zone": "Process Control",
+    "criticality": 0.95,
+    "safety_impact": 0.9,
+    "availability_impact": 0.95,
+    "internet_exposure": 0.15,
+    "legacy_factor": 0.6
+  },
+  "threat": {
+    "name": "Remote service compromise",
+    "cvss": 8.8,
+    "likelihood": 0.62,
+    "impact": 0.9,
+    "techniques": [
+      "T0886",
+      "T0866"
+    ],
+    "likelihood_basis": "analyst",
+    "cve_ids": [],
+    "epss_probability": null,
+    "epss_percentile": null,
+    "cisa_kev": false,
+    "evidence_date": null
+  },
+  "mitigation": {
+    "manual_effectiveness": 0.0,
+    "controls": []
+  },
+  "simulation": {
+    "iterations": 10000,
+    "uncertainty": 0.08,
+    "distribution": "truncated_normal",
+    "factor_uncertainty": {
+      "mitigation_effectiveness": 0.06,
+      "threat_likelihood": 0.12
+    },
+    "seed": 42,
+    "markov_steps": 24
+  },
+  "metadata": {
+    "assessment_id": "EXAMPLE-002",
+    "analyst": "",
+    "organization": "",
+    "scope": "Demonstration scenario; replace assumptions with site-specific evidence",
+    "notes": [
+      "Example data only; not an empirical site assessment."
+    ]
+  },
+  "decision": {
+    "risk_tolerance": 20.0,
+    "tolerance_label": "example-only; replace with organization-defined tolerance"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "asset": {
+    "name": "Water-Treatment PLC-01",
+    "asset_type": "PLC",
+    "zone": "Process Control",
+    "criticality": 0.95,
+    "safety_impact": 0.9,
+    "availability_impact": 0.95,
+    "internet_exposure": 0.15,
+    "legacy_factor": 0.6
+  },
+  "threat": {
+    "name": "Remote service compromise",
+    "cvss": 8.8,
+    "likelihood": 0.62,
+    "impact": 0.9,
+    "techniques": [
+      "T0886",
+      "T0866"
+    ],
+    "likelihood_basis": "analyst",
+    "cve_ids": [],
+    "epss_probability": null,
+    "epss_percentile": null,
+    "cisa_kev": false,
+    "evidence_date": null
+  },
+  "mitigation": {
+    "manual_effectiveness": 0.0,
+    "controls": [
+      {
+        "name": "OT/IT network segmentation",
+        "effectiveness": 0.65,
+        "coverage": 0.9,
+        "confidence": 0.8,
+        "csf_function": "PROTECT",
+        "control_id": "CTRL-001",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      },
+      {
+        "name": "Monitored remote access with MFA",
+        "effectiveness": 0.55,
+        "coverage": 0.85,
+        "confidence": 0.8,
+        "csf_function": "PROTECT",
+        "control_id": "CTRL-002",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      },
+      {
+        "name": "Centralized OT security monitoring",
+        "effectiveness": 0.35,
+        "coverage": 0.75,
+        "confidence": 0.75,
+        "csf_function": "DETECT",
+        "control_id": "CTRL-003",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      }
+    ]
+  },
+  "simulation": {
+    "iterations": 10000,
+    "uncertainty": 0.08,
+    "distribution": "truncated_normal",
+    "factor_uncertainty": {
+      "mitigation_effectiveness": 0.06,
+      "threat_likelihood": 0.12
+    },
+    "seed": 42,
+    "markov_steps": 24
+  },
+  "metadata": {
+    "assessment_id": "EXAMPLE-003",
+    "analyst": "",
+    "organization": "",
+    "scope": "Demonstration scenario; replace assumptions with site-specific evidence",
+    "notes": [
+      "Example data only; not an empirical site assessment."
+    ]
+  },
+  "decision": {
+    "risk_tolerance": 20.0,
+    "tolerance_label": "example-only; replace with organization-defined tolerance"
+  }
+}

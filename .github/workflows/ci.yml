@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install package and development tools
+        run: python -m pip install -e ".[dev]"
+      - name: Ruff
+        run: ruff check src tests
+      - name: Compile
+        run: python -m compileall -q src tests scripts
+      - name: Release metadata consistency
+        run: python scripts/release_check.py
+      - name: Unit tests with coverage
+        run: |
+          coverage run -m unittest discover -s tests -v
+          coverage report --fail-under=80
+      - name: CLI smoke tests
+        run: |
+          ot-risk-lab validate examples/demo_config.json
+          ot-risk-lab analyze examples/demo_config.json --format json --output /tmp/report.json
+          ot-risk-lab analyze examples/demo_config.json --format markdown --output /tmp/report.md
+          ot-risk-lab analyze examples/demo_config.json --format html --output /tmp/report.html
+          ot-risk-lab batch examples/scenarios --format csv --output /tmp/portfolio.csv
+          ot-risk-lab register examples/scenarios --format csv --output /tmp/risk-register.csv
+          ot-risk-lab compare examples/before_controls.json examples/after_controls.json --format html --output /tmp/comparison.html
+          ot-risk-lab ablate examples/demo_config.json --format json --output /tmp/ablation.json
+          ot-risk-lab benchmark examples/benchmark_suite.json --format json --output /tmp/benchmark.json
+          ot-risk-lab provenance examples/demo_config.json --output /tmp/provenance.json
+          ot-risk-lab study examples/study_observations.csv --bootstrap 100 --bins 4 --split-mode site-disjoint --evaluation-sites Plant-C --format json --output /tmp/study.json
+          ot-risk-lab agreement examples/analyst_ratings.csv --bootstrap 100 --format json --output /tmp/agreement.json
+          ot-risk-lab manifest examples/study_observations.csv --base-dir examples --parameter split=site-disjoint --output /tmp/experiment-manifest.json
+          ot-risk-lab verify-manifest /tmp/experiment-manifest.json --base-dir examples --output /tmp/manifest-verify.json
+          ot-risk-lab supplement examples/study_observations.csv examples/analyst_ratings.csv docs/empirical-study.md --output /tmp/supplement.zip
+          ot-risk-lab verify-bundle /tmp/supplement.zip --output /tmp/bundle-verify.json
+          ot-risk-lab doctor --format json --output /tmp/doctor.json
+          ot-risk-lab schema --output /tmp/analysis-config.schema.json

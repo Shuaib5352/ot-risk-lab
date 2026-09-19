@@ -1,0 +1,73 @@
+{
+  "asset": {
+    "name": "Robotic Cell Controller",
+    "asset_type": "Industrial Controller",
+    "zone": "Cell/Area Zone",
+    "criticality": 0.85,
+    "safety_impact": 0.8,
+    "availability_impact": 0.8,
+    "internet_exposure": 0.05,
+    "legacy_factor": 0.2
+  },
+  "threat": {
+    "name": "Lateral movement from engineering workstation",
+    "cvss": 7.8,
+    "likelihood": 0.42,
+    "impact": 0.75,
+    "techniques": [
+      "T0866"
+    ],
+    "likelihood_basis": "analyst",
+    "cve_ids": [],
+    "epss_probability": null,
+    "epss_percentile": null,
+    "cisa_kev": false,
+    "evidence_date": null
+  },
+  "mitigation": {
+    "controls": [
+      {
+        "name": "Cell firewall allow-listing",
+        "effectiveness": 0.65,
+        "coverage": 0.95,
+        "confidence": 0.85,
+        "csf_function": "PROTECT",
+        "control_id": "CTRL-001",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      },
+      {
+        "name": "Privileged access monitoring",
+        "effectiveness": 0.4,
+        "coverage": 0.8,
+        "confidence": 0.8,
+        "csf_function": "DETECT",
+        "control_id": "CTRL-002",
+        "implementation": 1.0,
+        "evidence": "Example assumption; replace with implementation evidence.",
+        "reference": ""
+      }
+    ]
+  },
+  "simulation": {
+    "iterations": 3000,
+    "uncertainty": 0.08,
+    "distribution": "triangular",
+    "seed": 202,
+    "markov_steps": 24
+  },
+  "metadata": {
+    "assessment_id": "EXAMPLE-004",
+    "analyst": "",
+    "organization": "",
+    "scope": "Demonstration scenario; replace assumptions with site-specific evidence",
+    "notes": [
+      "Example data only; not an empirical site assessment."
+    ]
+  },
+  "decision": {
+    "risk_tolerance": 20.0,
+    "tolerance_label": "example-only; replace with organization-defined tolerance"
+  }
+}

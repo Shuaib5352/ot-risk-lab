@@ -1,0 +1,33 @@
+{
+  "@context": "https://w3id.org/codemeta/3.1",
+  "type": "SoftwareSourceCode",
+  "name": "OT-RiskLab",
+  "version": "0.7.0",
+  "description": "Transparent, reproducible stochastic cyber-risk modeling and empirical validation toolkit for Industrial Control Systems and Operational Technology.",
+  "applicationCategory": "Cybersecurity research software",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.10",
+  "operatingSystem": ["Linux", "macOS", "Windows"],
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/Shuaib5352/ot-risk-lab",
+  "issueTracker": "https://github.com/Shuaib5352/ot-risk-lab/issues",
+  "developmentStatus": "active",
+  "dateModified": "2026-09-19",
+  "author": [
+    {
+      "type": "Person",
+      "givenName": "Shuaib Ayad",
+      "familyName": "Jasim"
+    }
+  ],
+  "keywords": [
+    "industrial control systems",
+    "operational technology",
+    "cybersecurity",
+    "risk assessment",
+    "Monte Carlo simulation",
+    "validation",
+    "reproducibility",
+    "research software"
+  ]
+}
