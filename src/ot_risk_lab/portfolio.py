@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import csv
-from html import escape
 import io
+from html import escape
 from statistics import fmean
 
 from .models import AnalysisConfig

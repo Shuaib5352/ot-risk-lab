@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import math
 import random
+from dataclasses import dataclass
 from statistics import fmean, pstdev
 
 from .models import AnalysisConfig, AssetContext, ThreatContext
@@ -66,7 +66,7 @@ def _pearson(x: list[float], y: list[float]) -> float:
     sy = math.sqrt(sum(v * v for v in dy))
     if sx == 0.0 or sy == 0.0:
         return 0.0
-    return sum(a * b for a, b in zip(dx, dy)) / (sx * sy)
+    return sum(a * b for a, b in zip(dx, dy, strict=True)) / (sx * sy)
 
 
 def _spearman(x: list[float], y: list[float]) -> float:

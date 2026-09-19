@@ -1,6 +1,6 @@
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.calibration import calibration_diagnostics, load_calibration_csv
 

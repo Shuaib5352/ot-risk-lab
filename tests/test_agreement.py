@@ -1,6 +1,6 @@
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.agreement import RatingRecord, agreement_diagnostics, load_ratings_csv
 

@@ -1,12 +1,11 @@
 import contextlib
 import io
 import json
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.cli import main
-
 
 CONFIG = {
     "metadata": {"assessment_id": "TEST-001"},

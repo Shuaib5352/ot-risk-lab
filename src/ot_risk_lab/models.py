@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import re
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import date
-import re
-from typing import Any, Mapping
+from typing import Any
 
 CSF_FUNCTIONS = ("GOVERN", "IDENTIFY", "PROTECT", "DETECT", "RESPOND", "RECOVER")
 UNCERTAINTY_DISTRIBUTIONS = ("fixed", "truncated_normal", "triangular")
@@ -330,7 +331,7 @@ class AnalysisConfig:
     metadata: AssessmentMetadata = field(default_factory=AssessmentMetadata)
 
     @classmethod
-    def from_mapping(cls, raw: Mapping[str, Any]) -> "AnalysisConfig":
+    def from_mapping(cls, raw: Mapping[str, Any]) -> AnalysisConfig:
         asset_raw = dict(raw["asset"])
         asset_raw.setdefault("safety_impact", asset_raw.get("criticality", 0.0))
         asset_raw.setdefault("availability_impact", asset_raw.get("criticality", 0.0))

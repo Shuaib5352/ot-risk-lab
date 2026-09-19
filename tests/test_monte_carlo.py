@@ -3,7 +3,6 @@ import unittest
 from ot_risk_lab.models import AnalysisConfig
 from ot_risk_lab.monte_carlo import run_monte_carlo
 
-
 RAW = {
     "asset": {"name": "PLC", "criticality": 0.9, "safety_impact": 0.8, "availability_impact": 0.9, "internet_exposure": 0.2, "legacy_factor": 0.6},
     "threat": {"name": "Scenario", "cvss": 8.8, "likelihood": 0.6, "impact": 0.9},

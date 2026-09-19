@@ -3,7 +3,6 @@ import unittest
 from ot_risk_lab.models import AnalysisConfig
 from ot_risk_lab.posture import control_posture, model_quality_warnings
 
-
 BASE = {
     "asset": {"name": "PLC", "criticality": 0.8, "safety_impact": 0.5, "availability_impact": 0.7, "internet_exposure": 0.2, "legacy_factor": 0.4},
     "threat": {"name": "Scenario", "cvss": 8.0, "likelihood": 0.5, "impact": 0.8},

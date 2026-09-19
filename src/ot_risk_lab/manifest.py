@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import hashlib
 import json
+from collections.abc import Iterable
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable
 
 from .version import METHODOLOGY_VERSIONS, SOFTWARE_VERSION
 

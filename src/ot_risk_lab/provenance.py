@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import hashlib
 import json
 import platform
 import sys
+from datetime import datetime, timezone
 
 from .models import AnalysisConfig
 from .version import METHODOLOGY_VERSIONS, OUTPUT_SCHEMA_VERSION, SOFTWARE_VERSION

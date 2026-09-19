@@ -39,7 +39,7 @@ class MarkovResult:
 
     @property
     def final(self) -> dict[str, float]:
-        return dict(zip(self.states, self.history[-1]))
+        return dict(zip(self.states, self.history[-1], strict=True))
 
     @property
     def compromise_probability(self) -> float:

@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 import platform
-from pathlib import Path
 import sys
 import tempfile
+from pathlib import Path
 
+from .models import AnalysisConfig
 from .schema import analysis_config_schema
 from .templates import starter_config
-from .models import AnalysisConfig
 from .version import SOFTWARE_VERSION
 
 _MIN_PYTHON = (3, 10)

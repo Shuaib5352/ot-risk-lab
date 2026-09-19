@@ -3,7 +3,6 @@ import unittest
 from ot_risk_lab.models import AnalysisConfig
 from ot_risk_lab.report import analyze, config_fingerprint, render_html, render_markdown
 
-
 RAW = {
     "metadata": {"assessment_id": "R-1", "scope": "unit test"},
     "asset": {"name": "PLC", "asset_type": "PLC", "zone": "Z1", "criticality": 0.9, "safety_impact": 0.8, "availability_impact": 0.9, "internet_exposure": 0.2, "legacy_factor": 0.4},

@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 from statistics import fmean
 
-from .models import AnalysisConfig, CSF_FUNCTIONS
+from .models import CSF_FUNCTIONS, AnalysisConfig
 from .risk import residual_risk
 
 

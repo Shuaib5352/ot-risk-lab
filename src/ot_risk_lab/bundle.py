@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import hashlib
 import json
-from pathlib import Path, PurePosixPath
 import zipfile
+from pathlib import Path, PurePosixPath
 
 from .manifest import sha256_file
 from .version import SOFTWARE_VERSION

@@ -1,6 +1,6 @@
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.bundle import build_supplement_bundle, verify_supplement_bundle
 

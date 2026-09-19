@@ -1,9 +1,9 @@
 import contextlib
 import io
 import json
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.cli import main
 from ot_risk_lab.schema import analysis_config_schema

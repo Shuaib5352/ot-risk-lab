@@ -1,10 +1,9 @@
 import json
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.benchmark import run_benchmark_manifest
-
 
 CONFIG = {
     "asset": {"name": "PLC", "criticality": 0.8, "safety_impact": 0.8, "availability_impact": 0.8, "internet_exposure": 0.2, "legacy_factor": 0.4},

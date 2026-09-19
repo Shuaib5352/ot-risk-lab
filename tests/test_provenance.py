@@ -3,7 +3,6 @@ import unittest
 from ot_risk_lab.models import AnalysisConfig
 from ot_risk_lab.provenance import deterministic_provenance, model_signature
 
-
 RAW = {
     "asset": {"name": "PLC", "criticality": 0.8, "safety_impact": 0.8, "availability_impact": 0.8, "internet_exposure": 0.2, "legacy_factor": 0.4},
     "threat": {"name": "Scenario", "cvss": 8.0, "likelihood": 0.4, "impact": 0.8},

@@ -1,7 +1,7 @@
 import json
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.manifest import build_experiment_manifest, verify_experiment_manifest
 

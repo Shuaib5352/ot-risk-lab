@@ -3,7 +3,6 @@ import unittest
 from ot_risk_lab.ablation import run_ablation
 from ot_risk_lab.models import AnalysisConfig
 
-
 RAW = {
     "asset": {"name": "PLC", "criticality": 0.8, "safety_impact": 0.9, "availability_impact": 0.9, "internet_exposure": 0.4, "legacy_factor": 0.5},
     "threat": {"name": "Remote compromise", "cvss": 9.0, "likelihood": 0.5, "impact": 0.8},

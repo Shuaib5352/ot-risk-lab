@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import csv
+import math
+import random
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime, timezone
-import math
 from pathlib import Path
-import random
-from typing import Iterable
 
 from .calibration import calibration_diagnostics
 

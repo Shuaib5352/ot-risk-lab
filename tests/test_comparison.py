@@ -1,12 +1,11 @@
 import json
 import tempfile
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 from ot_risk_lab.cli import main
 from ot_risk_lab.comparison import compare_configs
 from ot_risk_lab.models import AnalysisConfig
-
 
 BASE = {
     "asset": {

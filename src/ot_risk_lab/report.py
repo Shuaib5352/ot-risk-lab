@@ -7,8 +7,8 @@ from .markov import simulate_attack_progression
 from .models import AnalysisConfig
 from .monte_carlo import run_monte_carlo
 from .posture import control_posture, model_quality_warnings
-from .risk import baseline_risk, qualitative_band, residual_risk, risk_decomposition
 from .provenance import config_fingerprint, deterministic_provenance
+from .risk import baseline_risk, qualitative_band, residual_risk, risk_decomposition
 from .version import OUTPUT_SCHEMA_VERSION, SOFTWARE_VERSION
 
 
