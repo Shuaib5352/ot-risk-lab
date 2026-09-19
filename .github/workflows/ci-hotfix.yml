@@ -1,4 +1,5 @@
 name: one-time-ci-repair
+# rerun after repository identity correction
 
 on:
   push:
