@@ -85,7 +85,7 @@ jobs:
       - name: Check repository identity
         shell: bash
         run: |
-          if grep -R -n "usaaaaasdc" . --exclude-dir=.git --exclude="*.pyc"; then
+          if grep -R -n "usaaaaasdc" . --exclude-dir=.git --exclude="*.pyc" --exclude="ci-hotfix.yml"; then
             echo "Stale repository account reference detected"
             exit 1
           fi
