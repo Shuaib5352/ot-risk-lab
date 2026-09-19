@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Security issue
-    url: https://github.com/usaaaaasdc/ot-risk-lab/security
+    url: https://github.com/Shuaib5352/ot-risk-lab/security
     about: Do not disclose exploitable security issues in a public bug report.
