@@ -19,6 +19,7 @@
 - CI smoke tests now cover `doctor`, `schema`, and release metadata consistency.
 - Release workflow emits an SBOM alongside Python distributions and checksums.
 - Core risk equations and v0.6 empirical-study semantics are unchanged.
+- Normalized Ruff formatting and explicit `zip(..., strict=True)` compatibility checks; no model equations or benchmark values changed.
 
 ## 0.6.0 - 2026-09-19
 
